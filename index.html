@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Calculator app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <section class="calc">
+    <div class="container">
+      <div class="upper">
+        <p>Calc</p>
+        <div class="right">
+          <span>Theme</span>
+          <div class="tri-toggle">
+            <label for="theme1">1</label>
+            <input type="radio" id="theme1" name="theme">
+            <label for="theme2">2</label>
+            <input type="radio" id="theme2" name="theme">
+            <label for="theme3">3</label>
+            <input type="radio" id="theme3" name="theme">
+          </div>
+        </div>
+      </div>
+      <div class="result">
+        <input type="text" id="result" placeholder="0" readonly>
+      </div>
+      <div class="keypad">
+        <input type="button" class="btn no" value="7">
+        <input type="button" class="btn no" value="8">
+        <input type="button" class="btn no" value="9">
+        <input type="button" class="btn del" value="del">
+        <input type="button" class="btn no" value="4">
+        <input type="button" class="btn no" value="5">
+        <input type="button" class="btn no " value="6">
+        <input type="button" class="btn op" value="+">
+        <input type="button" class="btn no" value="1">
+        <input type="button" class="btn no" value="2">
+        <input type="button" class="btn no" value="3">
+        <input type="button" class="btn op" value="-">
+        <input type="button" class="btn no" value=".">
+        <input type="button" class="btn no" value="0">
+        <input type="button" class="btn op" value="/">
+        <input type="button" class="btn op" value="x">
+        <input type="button" class="btn reset" value="reset">
+        <input type="button" class="btn equal" value="=">
+      </div>
+
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/abdelrhmanKh">Abdelrhaman khalil</a>.
+    </div>
+  </section>
+
+
+  <script src="main.js"></script>
+</body>
+
+</html>

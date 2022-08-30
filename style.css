@@ -1,0 +1,282 @@
+:root {
+    --main-backgound: hsl(222, 26%, 31%);
+    --toggle-background: hsl(223, 31%, 20%);
+    --keypad-background: hsl(223, 31%, 20%);
+    --screen-background: hsl(224, 36%, 15%);
+
+    --key-background: hsl(30, 25%, 89%);
+    --key-shadow: hsl(28, 16%, 65%);
+
+    --toggle: hsl(6, 63%, 50%);
+    --equal-background: hsl(6, 63%, 50%);
+    --equal-shadow: hsl(6, 70%, 34%);
+    --equal-color: #ffffff;
+
+    --del-res-background: hsl(225, 21%, 49%);
+    --del-res-shadow: hsl(224, 28%, 35%);
+
+    --del-res-color: #ffffff;
+
+    --number-color: hsl(221, 14%, 31%);
+    --upper-color: hsl(0, 0%, 100%);
+}
+
+/* ================== start Global Setting====================== */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+}
+
+body {
+    font-family: 'League Spartan';
+    font-size: 32px;
+
+}
+
+.container {
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* ================== End Global Setting====================== */
+/* ================== Start Calclatour ====================== */
+.calc {
+    background-color: var(--main-backgound);
+    width: 100vw;
+    /* height: 100vh; */
+}
+
+.calc .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 588px;
+    padding-top: 46px;
+}
+
+.calc .upper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--upper-color);
+    margin-bottom: 32px;
+}
+
+.calc .upper p {
+    font-size: 31px;
+    text-transform: lowercase;
+}
+
+.calc .upper .right {
+    display: flex;
+    align-items: center;
+    gap: 27px
+}
+
+.calc .upper .right span {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.calc .upper input {
+    height: 18px;
+    width: 18px;
+    appearance: none;
+    background-color: var(--toggle);
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.calc .upper input:hover {
+    cursor: pointer;
+}
+
+.calc .tri-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--toggle-background);
+    background-color: var(--toggle-background);
+    border-radius: 50px;
+    width: 71px;
+    height: 26px;
+    position: relative;
+}
+
+.calc .tri-toggle label {
+    content: "";
+    position: absolute;
+    font-size: 12px;
+    color: var(--upper-color);
+    translate: -50% -50%;
+    top: -13px;
+}
+
+#theme1 {
+    opacity: 1;
+
+}
+
+.calc .tri-toggle label[for='theme1'] {
+    left: 25%;
+}
+
+
+#theme2 {
+    opacity: 0;
+}
+
+.calc .tri-toggle label[for='theme2'] {
+    left: 50%;
+}
+
+#theme3 {
+    opacity: 0;
+}
+
+.calc .tri-toggle label[for='theme3'] {
+    left: 75%;
+}
+
+
+.calc .result {
+    margin-bottom: 24px;
+}
+
+.calc .result input {
+    width: 100%;
+    font-size: 40px;
+    text-align: right;
+    background-color: var(--screen-background);
+    color: var(--upper-color);
+    border: none;
+    border-radius: 10px;
+    padding: 25px 22px;
+    font-family: 'League Spartan';
+}
+
+.calc .result input::placeholder {
+    color: var(--upper-color)
+}
+
+
+.calc .keypad {
+    background-color: var(--keypad-background);
+    padding: 24px 24px 28px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 13px;
+    grid-row-gap: 17px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.calc .keypad input {
+    height: 60px;
+    min-width: 60px;
+    border: none;
+    text-align: center;
+    font-size: 32px;
+    font-family: 'League Spartan';
+    border-radius: 5px;
+    box-shadow: 0px 4px 0px var(--key-shadow);
+    background-color: var(--key-background);
+    color: var(--number-color);
+}
+
+.calc .keypad .reset {
+    grid-area: 5 / 1 / 6 / 3;
+    box-shadow: 0px 4px 0px var(--del-res-shadow);
+    background-color: var(--del-res-background);
+    color: var(--del-res-color);
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.calc .keypad .equal {
+    grid-area: 5 / 3 / 5 / 5;
+    box-shadow: 0px 4px 0px var(--equal-shadow);
+    background-color: var(--equal-background);
+    color: var(--equal-color);
+    font-size: 20px;
+
+}
+
+.calc .keypad .del {
+    box-shadow: 0px 4px 0px var(--del-res-shadow);
+    background-color: var(--del-res-background);
+    color: var(--del-res-color);
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+@media (min-width:992px) {
+    .calc {
+        height: 100vh;
+    }
+
+    .calc .keypad {
+        grid-column-gap: 28px;
+        grid-row-gap: 30px;
+    }
+
+    .calc .keypad .del, .calc .keypad .reset, .calc .keypad .equal {
+        font-size: 25px;
+    }
+
+}
+
+/* ================== End Calclatour ====================== */
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-top: 5px;
+    padding-bottom: 6px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
