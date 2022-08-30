@@ -131,7 +131,7 @@ function addcomma(value) {
         const groups = arr.map((e, i) => {
             return i % chunkSize === 0 ? arr.slice(i, i + chunkSize) : null;
         }).filter(e => { return e; });
-        console.log(groups)
+
 
         let threegroup = groups.map(e => e.reverse().join("")).reverse()
 
@@ -178,12 +178,12 @@ function makeopration(opra) {
 }
 
 equal.addEventListener("click", () => {
-    if (!result.value == 0 && !result.value.length == 0) {
+
+    if (!(result.value == "0") && no.length >= 1) {
         no.push(result.value)
         no = no.map(e => {
             return removecomma(e)
         })
-
         let res = 0
         let length = op.length;
         for (let i = 0; i < length; i++) {
@@ -211,10 +211,10 @@ equal.addEventListener("click", () => {
             }
 
         }
-
-
         result.value = addcomma(`${res}`);
     }
+
+
 
 })
 
