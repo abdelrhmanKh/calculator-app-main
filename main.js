@@ -127,10 +127,13 @@ function addcomma(value) {
     if (!value.match(reg)) {
         const chunkSize = 3;
         let arr = [...removecomma(value)]
+        arr = arr.reverse()
         const groups = arr.map((e, i) => {
             return i % chunkSize === 0 ? arr.slice(i, i + chunkSize) : null;
         }).filter(e => { return e; });
-        let threegroup = groups.map(e => e.join(""))
+        console.log(groups)
+
+        let threegroup = groups.map(e => e.reverse().join("")).reverse()
 
         return threegroup.join(",")
     }
