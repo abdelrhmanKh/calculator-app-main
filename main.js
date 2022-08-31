@@ -151,9 +151,11 @@ numbers.forEach((e) => {
 })
 
 del.addEventListener('click', () => {
-    let value = [...removecomma(result.value)];
+    let value = [...result.value];
+    console.log(value)
     value.pop()
-    result.value = addcomma(`${value}`);
+    result.value = value.join("");
+    // result.value = addcomma(`${value}`);
 })
 
 reset.addEventListener("click", () => {
